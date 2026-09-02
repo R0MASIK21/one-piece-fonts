@@ -1,0 +1,29 @@
+const container = document.getElementById("wanted-container");
+const avatarEl = document.getElementById("follower-avatar");
+const nameEl = document.getElementById("follower-name");
+const bountyEl = document.getElementById("bounty-amount");
+
+let hideTimeout;
+
+window.addEventListener('onEventReceived', function (obj) {
+    if (!obj.detail.event || obj.detail.listener !== 'follower-latest') return;
+
+    const event = obj.detail.event;
+    
+    avatarEl.src = event.avatar || "https://via.placeholder.com/150";
+    nameEl.innerText = event.name;
+
+    // Рандомна сума без значка белі (він вже є на фоні постера)
+    const randomBounty = Math.floor(Math.random() * 1490 + 10) * 1000000;
+    bountyEl.innerText = randomBounty.toLocaleString().replace(/,/g, ' ');
+
+    clearTimeout(hideTimeout);
+    
+    container.classList.remove("show");
+    void container.offsetWidth; 
+    container.classList.add("show");
+
+    hideTimeout = setTimeout(() => {
+        container.classList.remove("show");
+    }, 6000);
+});
