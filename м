@@ -1,0 +1,14 @@
+<div class="wanted-container" id="wanted-container">
+    <div class="poster-wrapper">
+        <img src="https://cdn.streamelements.com/uploads/01m1fnej1znbadsjdf4bz2asve.webp" class="wanted-bg" alt="Wanted Poster">
+        
+        <!-- Аватарка чітко по твоїй червоній рамці -->
+        <img id="follower-avatar" class="follower-avatar" src="" alt="Avatar">
+        
+        <!-- Текст із канонічним шрифтом One Piece -->
+        <div class="poster-info">
+            <div id="follower-name" class="follower-name">MARIETTA</div>
+            <div id="bounty-amount" class="bounty-amount">146,000,000</div>
+        </div>
+    </div>
+</div>
